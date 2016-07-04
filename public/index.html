@@ -32,36 +32,30 @@
 					<a href="#">Brad Wynter</a>
 					<ul class="menu vertical">
 						<li><a href="#">Edit Profile</a></li>
-						<li><a id="requestToServer" href="http://localhost:8080/api/profiles">Log In</a></li>
+						<li><a id="requestToServer">Log In</a></li>
 						<p id="demo"></p>
 
-<!-- <script>
-$(function(){
-  $("#requestToServer").click(function(){
-		$.ajax({
-			type: 'GET',
-			url: 'http://localhost:8080/api/users',
-			crossDomain: true,
-		  beforeSend: function(xhr) {
-		    xhr.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Nzc5YTc3ZGI4OGY4YTZkNmFjMTk3M2QiLCJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJleHAiOjE0NjgxOTUzMjUsImlhdCI6MTQ2NzU5MDUyNX0.m07iIFzwb9NiPvVPEXDFldcIht8-uIv9ZqC4LCTjoP0');
-		  },
-			success: function(data){
-				console.log(data);
-			}
-		});
-	});
-}); -->
-// function loadDoc() {
-//   var xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = function() {
-//     if (xhttp.readyState == 4 && xhttp.status == 200) {
-//       document.getElementById("demo").innerHTML = xhttp.responseText;
-//     }
-//   };
-//   xhttp.open("GET", "http://localhost:8080/api/users", Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Nzc5YTc3ZGI4OGY4YTZkNmFjMTk3M2QiLCJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJleHAiOjE0NjgxOTUzMjUsImlhdCI6MTQ2NzU5MDUyNX0.m07iIFzwb9NiPvVPEXDFldcIht8-uIv9ZqC4LCTjoP0=);
-//   xhttp.send();
-// }
-</script>
+
+		<script type='text/javascript'>
+			$("#requestToServer").click(function(){
+						$.ajax({
+					      type: 'GET',
+					  url: 'http://localhost:8080/api/profiles',
+					      dataType: 'json',
+					      // These headers are only necessary for "profile", not "profiles"
+					      headers: {
+					          'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Nzc3NDU0ODAwNjkwMzQ0NDIyMmI1ODEiLCJlbWFpbCI6InNhbS5oYXJyaXNAZXhhbXBsZS5jb20iLCJleHAiOjE0NjgyMDU0MDIsImlhdCI6MTQ2NzYwMDYwMn0.pZMfma-gunBo5BePCtDfMVjQrffafi_vYm8K8IEN1dA'
+					      },
+					  success: function(data){
+					          console.log(data);
+					          data = $.grep(data, function( a ){
+					              return (a.city === "Sydney");
+					          });
+					          console.log(data);
+					      }
+					});
+			  });
+		</script>
 
 					</ul>
 				</li>
@@ -112,6 +106,38 @@ $(function(){
 				</fieldset>
 			</div>
 		</div>
+
+		<script type='text/javascript'>
+
+		$('#java').click(function() {
+				if (this.checked) {
+						console.log("Search for people with the 'java' skill");
+										$.ajax({
+												type: 'GET',
+												url: 'http://localhost:8080/api/profiles',
+												dataType: 'json',
+												// These headers are only necessary for "profile", not "profiles"
+												headers: {
+														'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Nzc3NDU0ODAwNjkwMzQ0NDIyMmI1ODEiLCJlbWFpbCI6InNhbS5oYXJyaXNAZXhhbXBsZS5jb20iLCJleHAiOjE0NjgyMDU0MDIsImlhdCI6MTQ2NzYwMDYwMn0.pZMfma-gunBo5BePCtDfMVjQrffafi_vYm8K8IEN1dA'
+												},
+												success: function(data){
+														// var searchResults = new Array();
+														var result = $.grep(data, function(n){
+																// for (i = 0; i < n.skills.length; i++){
+																		return (n.skills === "jquery");
+																// };
+																// searchResults.push(result);
+														});
+														console.log(result);
+												}
+										});
+								} else {
+						console.log("No search");
+						};
+						});
+		</script>
+
+
 <!-- Main results  -->
 			<main></main>
 
@@ -168,13 +194,13 @@ $(function(){
 					<button class="tiny secondary hollow button" href="#">{{ skills[1] }}</button>
 					<button class="tiny secondary hollow button" href="#">{{ skills[3] }}</button>
 					<button class="tiny secondary hollow button" href="#">{{ skills[4] }}</button>
-				</div>	
+				</div>
 			</div>
 			<div class="goals">
 				<h3>Goals</h3>
 				<div>
 					<button class="hollow button" href="#">{{ goals }}</button>
-				</div>	
+				</div>
 			</div>
 			<div class="lookingfor">
 				<h3>What I'm looking for:</h3>
@@ -202,7 +228,7 @@ $(function(){
 	<!-- Templates -->
 	<script src="js/indexView.js"></script>
 	<script src="js/cardView.js"></script>
-	<script src="js/profileView.js"></script>  
+	<script src="js/profileView.js"></script>
 
 	<!-- Models & Others -->
 	<script src="js/user.js"></script>
