@@ -18,27 +18,46 @@
 	}
 }
 
-.card {
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-  // width: 20%;
-  // min-width: 128px;
-  .callout { 
-  	box-shadow: 2px 4px 5px 0px #d7d7d7;
-  	text-align: center;
-  	img {
-		border-radius: 50%;
-  	}
-  }
 
-}
 
 #mainboard {
 	padding-top: 20px;
+	.card {
+		display: inline-block;
+		position: relative;
+		vertical-align: top;
+		// width: 20%;
+		// min-width: 128px;
+		.callout { 
+			box-shadow: 2px 4px 5px 0px #d7d7d7;
+			text-align: center;
+			img {
+				border-radius: 50%;
+				height: 200px;
+				width: 200px;
+			}
+		}
+	}
+}
+
+.profile-pic {
+	float: left;
+	widht: 210px;
+	padding-right: 20px;
+	padding-bottom: 20px;
 	img {
 		border-radius: 50%;
+		height: 150px;
+		width: 150px;	
 	}
+}
+
+.profile-card {
+	float: left;
+	vertical-align: center;
+}
+.profile-info {
+	display: block;
 }
 
 q {
