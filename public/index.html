@@ -1,10 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="en">
+
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>GA Connect</title>
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<link rel="stylesheet" href="css/main.css" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Sura" rel="stylesheet">
@@ -30,7 +32,37 @@
 					<a href="#">Brad Wynter</a>
 					<ul class="menu vertical">
 						<li><a href="#">Edit Profile</a></li>
-						<li><a href="#">Log Out</a></li>
+						<li><a id="requestToServer" href="http://localhost:8080/api/profiles">Log In</a></li>
+						<p id="demo"></p>
+
+<!-- <script>
+$(function(){
+  $("#requestToServer").click(function(){
+		$.ajax({
+			type: 'GET',
+			url: 'http://localhost:8080/api/users',
+			crossDomain: true,
+		  beforeSend: function(xhr) {
+		    xhr.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Nzc5YTc3ZGI4OGY4YTZkNmFjMTk3M2QiLCJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJleHAiOjE0NjgxOTUzMjUsImlhdCI6MTQ2NzU5MDUyNX0.m07iIFzwb9NiPvVPEXDFldcIht8-uIv9ZqC4LCTjoP0');
+		  },
+			success: function(data){
+				console.log(data);
+			}
+		});
+	});
+}); -->
+// function loadDoc() {
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function() {
+//     if (xhttp.readyState == 4 && xhttp.status == 200) {
+//       document.getElementById("demo").innerHTML = xhttp.responseText;
+//     }
+//   };
+//   xhttp.open("GET", "http://localhost:8080/api/users", Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Nzc5YTc3ZGI4OGY4YTZkNmFjMTk3M2QiLCJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJleHAiOjE0NjgxOTUzMjUsImlhdCI6MTQ2NzU5MDUyNX0.m07iIFzwb9NiPvVPEXDFldcIht8-uIv9ZqC4LCTjoP0=);
+//   xhttp.send();
+// }
+</script>
+
 					</ul>
 				</li>
 			</ul>
@@ -85,7 +117,7 @@
 		<div class="row">
 
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic5.png">
 						<h4>Venessa Woods</h4>
@@ -94,7 +126,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -103,7 +135,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -112,7 +144,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -121,7 +153,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -130,7 +162,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -139,7 +171,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -148,7 +180,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -157,7 +189,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -166,7 +198,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -175,7 +207,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -184,7 +216,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -193,7 +225,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="#">		
+				<a href="#">
 					<div class="callout">
 						<img src="./img/profilepic.png">
 						<h4>Venessa Woods</h4>
@@ -212,7 +244,7 @@
 						<h4>Pulp Fiction brought guns, gimps, and glory to the Cannes Film Festival</h4>
 						<p>If my answers frighten you then you should cease asking scary questions. Zed's dead, baby. Zed's dead. I love you, Pumpkin. I love you, Honey Bunny. All right, everybody be cool, this is a robbery!</p>
 						<p>
-							<a href="#">Read on...</a> 
+							<a href="#">Read on...</a>
 							<a href="#" class="right"><i class="fi-share"></i></a>
 							<a href="#" class="right"><i class="fi-heart"></i></a>
 						</p>
@@ -228,7 +260,7 @@
 						<h4>Santch. The best gangster movie of all time? I'll fight ya for it.</h4>
 						<p>It's behind you Tyrone. Whenever you reverse, things come from behind you. Who took the jam outta your doughnut? Yes, London. You know: fish, chips, cup 'o tea, bad food, worse weather, Mary f-king Poppins... LONDON.</p>
 						<p>
-							<a href="#">Read on...</a> 
+							<a href="#">Read on...</a>
 							<a href="#" class="right"><i class="fi-share"></i></a>
 							<a href="#" class="right"><i class="fi-heart"></i></a>
 						</p>
@@ -244,7 +276,7 @@
 						<h4>It's said that the first rule of Fight Club is: 'You do not talk about Fight club.' We must ignore this rule for two reasons:</h4>
 						<p>You are not special. You are not a beautiful or unique snowflake. You're the same decaying organic matter as everything else.</p>
 						<p>
-							<a href="http://cultrbox.com/2014/01/13/fight-club-falling-down-and-the-anti-corporate-anti-hero/">Read on...</a> 
+							<a href="http://cultrbox.com/2014/01/13/fight-club-falling-down-and-the-anti-corporate-anti-hero/">Read on...</a>
 							<a href="#" class="right"><i class="fi-share"></i></a>
 							<a href="#" class="right"><i class="fi-heart"></i></a>
 						</p>
