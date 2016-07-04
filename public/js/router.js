@@ -17,9 +17,9 @@ var Router = Backbone.Router.extend({
 	},
 
 	showProfile : function(id) {
-		var userprofile = new UserProfile({ id: id});
+		var userprofile = new UserProfile({ id: id });
 		userprofile.fetch().done(function(){
-			var view = new ShowView({ model: userprofile });
+			var view = new ProfileView({ model: userprofile });
 			$('.userprofiles').html( view.render().el )
 		});
 	}

@@ -34,8 +34,6 @@
 						<li><a href="#">Edit Profile</a></li>
 						<li><a id="requestToServer">Log In</a></li>
 						<p id="demo"></p>
-
-
 		<script type='text/javascript'>
 			$("#requestToServer").click(function(){
 						$.ajax({
@@ -56,7 +54,6 @@
 					});
 			  });
 		</script>
-
 					</ul>
 				</li>
 			</ul>
@@ -163,11 +160,11 @@
 	</script>
 
     <script id="card-template" type="text/x-underscore-template">
-			<a href="#profiles/{{ id }}">
+			<a href="#profiles/{{ _id }}">
 				<div class="callout">
 					<img src="./img/profilepic5.png">
 					<h4>{{ user.firstName }} {{ user.lastName }}</h4>
-					<p>{{ user.city }}, {{ course[0].courseName }}</p>
+					<p>{{ city }}, {{ #course }} {{ courseName }} {{ /course }} </p>
 				</div>
 			</a>
     </script>
@@ -175,12 +172,12 @@
 <script id="profile-template" type="text/x-underscore-template">
 	<div class="row">
 		<div class="profile-pic">
-			<img src="../img/profilepic.png">
+			<img src="../public/img/profilepic.png">
 		</div>
 		<div class="profile-card">
-			<h1>{{ firstName }} {{ lastName }}}</h1>
+			<h1>{{ user.firstName }} {{ user.lastName }}}</h1>
 			<h5>{{ headline }}</h5>
-			<h6>{{ course[0].courseName }}</h6>
+			<h6>{{ #course }} {{ courseName }} {{ /course }}</h6>
 		</div>
 	</div>
 	<div class="row">
