@@ -4,6 +4,6 @@ var UserProfile = Backbone.Model.extend({
 
 // You have to ,anually account for pluralization of model.
 var UserProfiles = Backbone.Collection.extend({
-	model: Dish,
+	model: UserProfile,
 	url: 'http://localhost:8080/api/profiles'
 })

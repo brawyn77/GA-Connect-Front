@@ -140,8 +140,8 @@ $(function(){
 			<a href="#profiles/{{ id }}">
 				<div class="callout">
 					<img src="./img/profilepic5.png">
-					<h4>{{ firstName }} {{ lastName }}</h4>
-					<p>{{ city }}, {{ course[0].courseName }}</p>
+					<h4>{{ user.firstName }} {{ user.lastName }}</h4>
+					<p>{{ user.city }}, {{ course[0].courseName }}</p>
 				</div>
 			</a>
     </script>
@@ -198,9 +198,15 @@ $(function(){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/what-input/2.1.1/what-input.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.js"></script>
-	<script src="js/app.js"></script>
 
+	<!-- Templates -->
+	<script src="js/indexView.js"></script>
 	<script src="js/cardView.js"></script>
-	<script src="js/profileView.js"></script>
+	<script src="js/profileView.js"></script>  
+
+	<!-- Models & Others -->
+	<script src="js/user.js"></script>
+	<script src="js/router.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
