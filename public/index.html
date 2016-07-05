@@ -86,7 +86,7 @@
 				</fieldset>
 				<fieldset class="fieldset">
 					<legend>Skills</legend>
-					<input id="java" type="checkbox"><label for="java">Java</label>
+					<input id="jquery" type="checkbox"><label for="jquery">jQuery</label>
 					<input id="html/css" type="checkbox"><label for="html/css">HTML/CSS</label>
 					<input id="photoshop" type="checkbox"><label for="photoshop">Photoshop</label>
 					<input id="mongoose" type="checkbox"><label for="mongoose">Mongoose</label>
@@ -106,9 +106,9 @@
 
 		<script type='text/javascript'>
 
-		$('#java').click(function() {
+		$('#jquery').click(function() {
 				if (this.checked) {
-						console.log("Search for people with the 'java' skill");
+						console.log("Search for people with the 'jQuery' skill");
 										$.ajax({
 												type: 'GET',
 												url: 'http://localhost:8080/api/profiles',
@@ -180,17 +180,16 @@
 			<h6>{{ #course }} {{ courseName }} {{ /course }}</h6>
 		</div>
 	</div>
-	<div class="row">
+	<div class="callout">
 		<div class="profile-info">
-			<q>{{ elevatorPitch }}</q>
+			<i><q>{{ elevatorPitch }}</q></i>
 
 			<div class="skills">
 				<h3>Skills</h3>
 				<div>
-					<button class="tiny secondary hollow button" href="#">{{ skills[0] }}</button>
-					<button class="tiny secondary hollow button" href="#">{{ skills[1] }}</button>
-					<button class="tiny secondary hollow button" href="#">{{ skills[3] }}</button>
-					<button class="tiny secondary hollow button" href="#">{{ skills[4] }}</button>
+				<ul>
+					{{#skills}} <button class="hollow button skills" href="3">{{.}} {{/skills}}</button>
+				</ul>
 				</div>
 			</div>
 			<div class="goals">
